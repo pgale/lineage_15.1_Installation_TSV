@@ -5,12 +5,12 @@ _Collated by @pgale_
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too.
  
-### Introduction ###
+## Introduction ##
 This is the stable, unofficial build of Lineage 15.1 for the amazing Lenovo ThinkSmart View (CD-18781Y), based on Android 8.1. I've found no issues so far that have plagued me on other Android 8.1 or 11 builds for running Home Assistant dashboards with working audio and voice assist. This is by far the best OS I've tried and I recommend this over the other options. There is also a postmarketOS build based on Alpine Linux here but for ViewAssist and general HA use, in my opinion, Android is the easier option to get running and the most usable, particularly if you rely on Fully Kiosk Browser and any other Android apps.
  
 You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due to the difficulties of running these tools on Windows and USB faffs, I prefer to use a Raspberry Pi4 running Debian. If you are comfortable with Linux, I would recommend that route.
  
-### Files and installation Prerequisites - WINDOWS ###
+## Files and installation Prerequisites - WINDOWS ##
 
 > [!WARNING]
 >**WARNING: It is very common to encounter issues when trying to flash which are due to USB cables/ports. These failures show up as Sahara errors in the QFIL tool on Windows. Make sure to use a USB 2.0 port, black not blue, and you must use a USB 2.0 hub/bus in windows device manager too. If, when you start flashing, it seems to pause for around a minute and then returns a Sahara error, it is very likely you need to change your USB port and/or cable. Many very modern PC's have USB 3.1 and above and in my experience, these cause a lot of issues. If you have an old PC with USB 2 ports, that might be your best bet.**
@@ -75,7 +75,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       g.	Uncheck Open the Toolkit and Launch ADB & Fastboot++ options, click Finish.
 13.	After installation, Windows should also be in Test Mode which can be seen in the lower left of the desktop.
  
-### Flashing the image - WINDOWS ###
+## Flashing the image - WINDOWS ##
  
 To start from a known state, flash the '200628.084 Teams & Others' firmware/OS to the device. Starting from other images can cause problems, particularly if you've experimented with other images, so it's worth taking this extra step.
  
@@ -128,7 +128,7 @@ You will need to re-select ADB Sideload after each one. The connection times out
 27.	Disconnect the USB cable and power cycle the device. The Lenovo logo will show for a few seconds and then the animated Lineage logo. This takes a little longer on first boot.
 28.	You now have a fabulous and shiny Android device!
  
-### Setting up Android for HA use ###
+## Setting up Android for HA use ##
  
 These setting are what I use on my devices. Feel free to modify as desired.
  
@@ -174,11 +174,17 @@ These setting are what I use on my devices. Feel free to modify as desired.
 7.	Install apps from the google app store (as desired).
 8.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
   
-### Flashing the image - LINUX (Still to do/finesse) ###
+## Flashing the image - LINUX (Still to do/finesse) ##
  
-Log into pi/linux
- 
-Boot the device into EDL both vol keys and plugging in power
+> [!NOTE]
+> I store my ROM images in folders under /edl. In the code blocks below, modify them to reflect where you have put your image files.
+> I run EDL on a Pi4 built with Debian. I find the USB flashing method is more reliable than using Windows and once you are used to it, is much quicker to spin up a new device.
+
+Log into linux.
+
+Connect USB cable to the device. 
+
+Boot the device into EDL by using both vol keys and plugging in power.
 
 ```
 cd edl
@@ -190,8 +196,10 @@ edl w recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 ```
  
 Boot into recovery (vol+ and power on)
-select apply update - ADB sideload
-sideload lineage image from the connected computer:
+
+Select apply update - ADB sideload
+
+Sideload lineage image from the connected computer:
 
 ```
 adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
@@ -202,13 +210,16 @@ Factory reset
 reboot into Lineage OS
 
 
-### Troubleshooting and other useful links ###
+## Troubleshooting and other useful links ##
 
-Lenovo have a Windows based Rescue and Smart Assistant (RSA). This is good for re-flashing the original firmware in case you get into difficulty. In my experience, it can also suffer from USB issues as discussed in this guide, so you might want to try a USB 2.x port again if it doesn’t work.
-https://support.lenovo.com/us/en/downloads/ds101291-rescue-and-smart-assistant-lmsa
+> [!NOTE]
+> I will add to this section over time as I re-flash my existing ThinkSmart View devices to Lineage 15.1. Please do contact me if you have anything to add or have noticed any errors/omissions in this guide and I'll add them in for the benefit of others.
+- Lenovo have a Windows based Rescue and Smart Assistant (RSA). This is good for re-flashing the original firmware in case you get into difficulty. In my experience, it can also suffer from USB issues as discussed in this guide, so you might want to try a USB 2.x port again if it doesn’t work.
+The RSA can be found on the Lenovo support site [here](https://support.lenovo.com/us/en/downloads/ds101291-rescue-and-smart-assistant-lmsa)
+- It seems that the three-button navigation bar at the bottom doesn't rotate to the bottom of the screen when in landscape orientation. One user also reported that he couldn't get apps to stay in landscape mode. I'll update here if I find out more/a fix.
 
 
-### Original Lineage 15.1 release notes from @deadman ###
+## Original Lineage 15.1 release notes from @deadman ##
 
 Bugs: 
 Rotation can get stuck sometimes until you toggle auto rotation
