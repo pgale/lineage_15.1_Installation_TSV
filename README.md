@@ -2,6 +2,8 @@
 
 _Collated by @pgale_
 
+![One of my ThinkSmart View devices running an HA dashboard via Fully Kiosk Browser](/IMG_0479.JPG)
+
 > [!NOTE]
 > I'm not a developer but someone who is passionate about home automation, Home Assistant and the amazing Lenovo ThinkSmart View devices. I now have seven of these running as my main display panels around my house. The super low-cost makes this affordable and results in a fantastic experience.
 > Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors or omissions in this guide and I'll add them in for the benefit of others.
@@ -17,10 +19,11 @@ _Collated by @pgale_
 >
 > Warning - these posts and discussions are VERY long!
 
+> [!CAUTION]
+> These instructions and the flashing process does require some technical knowledge and skill. NO warranty or support is provided. If you buy a ThinkSmart View and can't get it flashed for whatever reason, that is down to you. These instructions are provided as a collation of many resources and writings across various forums and Discord servers to save you time and save you reading many hundereds of posts.
+
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too.
-
-![One of my ThinkSmart View devices running an HA dashboard via Fully Kiosk Browser](/IMG_0479.JPG)
 
 ## Introduction ##
 This is the stable, unofficial build of Lineage 15.1 for the amazing Lenovo ThinkSmart View (CD-18781Y), based on Android 8.1. I've found no issues so far that have plagued me on other Android 8.1 or 11 builds for running Home Assistant dashboards with working audio and voice assist. This is by far the best OS I've tried and I recommend this over the other options. There is also a postmarketOS build based on Alpine Linux [here](https://community.home-assistant.io/t/lenovo-thinksmart-view-rom-os-development/676324) but for ViewAssist and general HA use, in my opinion, Android is the easier option to get running and the most usable, particularly if you rely on Fully Kiosk Browser and any other Android apps.
