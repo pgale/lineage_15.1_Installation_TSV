@@ -2,6 +2,11 @@
 
 _Collated by @pgale_
 
+> [!NOTE]
+> I'm not a developer but someone who is passionate about home automation, Home Assistant and the amazing Lenovo ThinkSmart View devices. I now have seven of these running as my main display panels around my house. The super low-cost makes this affordable and results in a fantastic experience.
+> Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors or omissions in this guide and I'll add them in for the benefit of others.
+> I posted on the HA forum about my devices and the dashboards I run (a little old now as my design has moved on, but it will give you an idea of one way to create a dashboard and device to show the information you need to see.) Have a look at that post [here](https://community.home-assistant.io/t/my-take-on-a-home-dashboard-running-on-the-lenovo-thinksmart-view-and-managing-multiple-devices-running-fully-kiosk/718355).
+
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too.
  
@@ -213,7 +218,7 @@ reboot into Lineage OS
 ## Troubleshooting and other useful links ##
 
 > [!NOTE]
-> I will add to this section over time as I re-flash my existing ThinkSmart View devices to Lineage 15.1. Please do contact me if you have anything to add or have noticed any errors/omissions in this guide and I'll add them in for the benefit of others.
+> I will add to this section over time as I re-flash my existing ThinkSmart View devices to Lineage 15.1. Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors/omissions in this guide and I'll add them in for the benefit of others.
 - Lenovo have a Windows based Rescue and Smart Assistant (RSA). This is good for re-flashing the original firmware in case you get into difficulty. In my experience, it can also suffer from USB issues as discussed in this guide, so you might want to try a USB 2.x port again if it doesn’t work.
 The RSA can be found on the Lenovo support site [here](https://support.lenovo.com/us/en/downloads/ds101291-rescue-and-smart-assistant-lmsa)
 - It seems that the three-button navigation bar at the bottom doesn't rotate to the bottom of the screen when in landscape orientation. One user also reported that he couldn't get apps to stay in landscape mode. I'll update here if I find out more/a fix.
