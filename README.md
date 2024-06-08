@@ -6,6 +6,14 @@ _Collated by @pgale_
 > I'm not a developer but someone who is passionate about home automation, Home Assistant and the amazing Lenovo ThinkSmart View devices. I now have seven of these running as my main display panels around my house. The super low-cost makes this affordable and results in a fantastic experience.
 > Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors or omissions in this guide and I'll add them in for the benefit of others.
 > I posted on the HA forum about my devices and the dashboards I run (a little old now as my design has moved on, but it will give you an idea of one way to create a dashboard and device to show the information you need to see.) Have a look at that post [here](https://community.home-assistant.io/t/my-take-on-a-home-dashboard-running-on-the-lenovo-thinksmart-view-and-managing-multiple-devices-running-fully-kiosk/718355).
+>
+> Original posts on the installation of various OS's (Android and Linux) can be found here:
+> 
+> [Mattmon's original Android 8.1 build](https://community.home-assistant.io/t/is-this-the-perfect-standalone-tablet-for-ha/658422)
+> 
+> [FelixKa's posmarketOS (PMOS) build (Alpine Linux)](https://community.home-assistant.io/t/lenovo-thinksmart-view-rom-os-development/676324)
+>
+> Warning - these posts and discussions are VERY long!
 
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too.
