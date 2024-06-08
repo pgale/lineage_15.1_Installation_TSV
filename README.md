@@ -17,7 +17,9 @@ _Collated by @pgale_
 
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too.
- 
+
+![One of my ThinkSmart View devices running an HA dashboard via Fully Kiosk Browser](/IMG_0479.JPG)
+
 ## Introduction ##
 This is the stable, unofficial build of Lineage 15.1 for the amazing Lenovo ThinkSmart View (CD-18781Y), based on Android 8.1. I've found no issues so far that have plagued me on other Android 8.1 or 11 builds for running Home Assistant dashboards with working audio and voice assist. This is by far the best OS I've tried and I recommend this over the other options. There is also a postmarketOS build based on Alpine Linux here but for ViewAssist and general HA use, in my opinion, Android is the easier option to get running and the most usable, particularly if you rely on Fully Kiosk Browser and any other Android apps.
  
