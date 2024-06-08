@@ -1,4 +1,4 @@
-# **Lenovo ThinkSmart View flashing process for Lineage 15.1** #
+# **Lenovo ThinkSmart View flashing process guide for Lineage 15.1** #
 
 _Collated by @pgale_
 
