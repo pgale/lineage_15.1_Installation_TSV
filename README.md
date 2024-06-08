@@ -236,7 +236,10 @@ reboot into Lineage OS
 > I will add to this section over time as I re-flash my existing ThinkSmart View devices to Lineage 15.1. Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors/omissions in this guide and I'll add them in for the benefit of others.
 - Lenovo have a Windows based Rescue and Smart Assistant (RSA). This is good for re-flashing the original firmware in case you get into difficulty. In my experience, it can also suffer from USB issues as discussed in this guide, so you might want to try a USB 2.x port again if it doesn’t work.
 The RSA can be found on the Lenovo support site [here](https://support.lenovo.com/us/en/downloads/ds101291-rescue-and-smart-assistant-lmsa)
+
 - It seems that the three-button navigation bar at the bottom doesn't rotate to the bottom of the screen when in landscape orientation. One user also reported that he couldn't get apps to stay in landscape mode. I'll update here if I find out more/a fix.
+
+- From @chewza on Discord: For those with secure boot enabled, they need to temporarily disable that inside windows first otherwise bitlocker asks for their recovery key on the subsequent boot.
 
 
 ## Original Lineage 15.1 release notes from @deadman ##
