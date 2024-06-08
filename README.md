@@ -13,6 +13,8 @@ _Collated by @pgale_
 > 
 > [FelixKa's posmarketOS (PMOS) build (Alpine Linux)](https://community.home-assistant.io/t/lenovo-thinksmart-view-rom-os-development/676324)
 >
+> [Dinki's View Assist project (in beta)](https://github.com/dinki/View-Assist)
+>
 > Warning - these posts and discussions are VERY long!
 
 ### Credit where credit is due ###
