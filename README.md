@@ -174,8 +174,10 @@ These setting are what I use on my devices. Feel free to modify as desired.
     Sound:
   
         Set initial volumes as required
-        Security & Privacy:
-        Screen lock - none
+
+  	Security & Privacy:
+
+  	     Screen lock - none
 
     System:
 
@@ -183,16 +185,16 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Date & time - set automatic and time zone if not already set
         Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
         About Phone - Tap Build Number until it shows you are a developer
-        Status Bar - System icons - Battery - Don't show this icon (disable anything else to your liking)
-
-    Buttons:
-
-        Volume buttons wake device - ON  
+        Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
+  	    (disable anything else to your liking)
+        Buttons - Volume buttons wake device - ON  
         Developer options:
-        Root access - ADB only
-        Android debugging - ON
-7.	Install apps from the google app store (as desired).
-8.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+           Root access - ADB only
+           Android debugging - ON
+6.	Install apps from the google app store (as desired).
+7.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
+9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
   
 ## Files and installation Prerequisites - LINUX ##
 
@@ -254,7 +256,6 @@ These setting are what I use on my devices. Feel free to modify as desired.
 9. Use Vol+/- buttons to highlight **Apply update**; Slide camera shutter to select
 10. Slide camera shutter again to select **Apply from ADB** (default selection); **ADB Sideload** is displayed
 11. Sideload LineageOS image from the connected computer:
-
     `adb sideload ~/ThinkSmartView/lineage-15.1-20240602-UNOFFICIAL-starfire.zip`
 
     > [!NOTE]
@@ -276,13 +277,33 @@ These setting are what I use on my devices. Feel free to modify as desired.
 20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
 21. Proceed to **Setting up Android for HA**
 
+## Installing a newer webview ##
+
+At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.4896.127. You can install a newer version if you like but you need to ensure it's compatible with Android 8.1. I've tried Android System WebView 125.0.6422.165 (arm64-v8a + arm-v7a) (Android 8.0+) which seems to work ok. In basic, non-scientific testing, loading a fairly complex web page app side-by-side, the newer version performed slightly faster. The mealie web app, running within an HA dashboard as a popup and loading the home page with recipe images, was around four seconds faster than the old WebView version. I swapped the WebView version over on both devices and saw the same performance increase, showing it wasn't some other setting affecting performance.
+
+1. Download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
+2. Copy the file to a folder on your Linux or Windows machine that has ADB installed.
+3. WINDOWS - Run the ADB & Fastboot++ shortcut (installed as per the instructions above)
+4. Install the WebView:
+
+```
+adb install com.google.android.webview_125.0.6422.165-642216501_minAPI26_maxAPI28(arm64-v8a,armeabi-v7a)(nodpi)_apkmirror.com.apk
+```
+5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
+6. You should see both the original and the new WebView versions.
+7. Select the new WebView.
+8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
+
 ## Troubleshooting and other useful links ##
 
 > [!NOTE]
 > I will add to this section over time as I re-flash my existing ThinkSmart View devices to Lineage 15.1. Please do post in [discussions](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions) if you have anything to add or have noticed any errors/omissions in this guide and I'll add them in for the benefit of others.
 - Lenovo have a Windows based Rescue and Smart Assistant (RSA). This is good for re-flashing the original firmware in case you get into difficulty. In my experience, it can also suffer from USB issues as discussed in this guide, so you might want to try a USB 2.x port again if it doesn’t work.
 The RSA can be found on the Lenovo support site [here](https://support.lenovo.com/us/en/downloads/ds101291-rescue-and-smart-assistant-lmsa)
+
 - It seems that the three-button navigation bar at the bottom doesn't rotate to the bottom of the screen when in landscape orientation. One user also reported that he couldn't get apps to stay in landscape mode. I'll update here if I find out more/a fix.
+
+- From @chewza on Discord: For those with secure boot enabled, they need to temporarily disable that inside windows first otherwise bitlocker asks for their recovery key on the subsequent boot.
 
 
 ## Original Lineage 15.1 release notes from @deadman ##
