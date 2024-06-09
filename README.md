@@ -176,7 +176,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 27. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
 
-28. Proceed to [Setting up Android for HA](/Setting-up-Android-for-HA-use)
+28. Proceed to [Setting up Android for HA](#setting-up-android-for-ha-use)
  
   
 ## Files and installation Prerequisites - LINUX ##
