@@ -233,6 +233,22 @@ Factory reset
  
 reboot into Lineage OS
 
+## Installing a newer webview ##
+
+At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.4896.127. You can install a newer version if you like but you need to ensure it's compatible with Android 8.1. I've tried Android System WebView 125.0.6422.165 (arm64-v8a + arm-v7a) (Android 8.0+) which seems to work ok. In basic, non-scientific testing, loading a fairly complex web page app side-by-side, the newer version performed slightly faster. The mealie web app, running within an HA dashboard as a popup and loading the home page with recipe images, was around four seconds faster than the old WebView version. I swapped the WebView version over on both devices and saw the same performance increase, showing it wasn't some other setting affecting performance.
+
+1. Download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
+2. Copy the file to a folder on your Linux or Windows machine that has ADB installed.
+3. WINDOWS - Run the ADB & Fastboot++ shortcut (installed as per the instructions above)
+4. Install the WebView:
+
+```
+adb install com.google.android.webview_125.0.6422.165-642216501_minAPI26_maxAPI28(arm64-v8a,armeabi-v7a)(nodpi)_apkmirror.com.apk
+```
+5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
+6. You should see both the original and the new WebView versions.
+7. Select the new WebView.
+8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
 
 ## Troubleshooting and other useful links ##
 
