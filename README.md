@@ -22,13 +22,16 @@ _Collated by @pgale_
 > [!CAUTION]
 > These instructions and the flashing process does require some technical knowledge and skill. NO warranty or support is provided. If you buy a ThinkSmart View and can't get it flashed for whatever reason, that is down to you. These instructions are provided as a collation of many resources and writings across various forums and Discord servers to save you time and save you reading many hundereds of posts.
 
+
 ### Credit where credit is due ###
 Credit to @deadman96385 and @electimon on Discord for making this happen and putting in a tonne of work, @mattmon who produced the original 8.1 install and instructions. These instructions build on what they have written. Thanks also to @mngarchow for the detailed instructions that are reproduced in part here too. Thanks to @ADHDSquir for the Linux instructions below.
+
 
 ## Introduction ##
 This is the stable, unofficial build of Lineage 15.1 for the amazing Lenovo ThinkSmart View (CD-18781Y), based on Android 8.1. I've found no issues so far that have plagued me on other Android 8.1 or 11 builds for running Home Assistant dashboards with working audio and voice assist. This is by far the best OS I've tried and I recommend this over the other options. There is also a postmarketOS build based on Alpine Linux [here](https://community.home-assistant.io/t/lenovo-thinksmart-view-rom-os-development/676324) but for ViewAssist and general HA use, in my opinion, Android is the easier option to get running and the most usable, particularly if you rely on Fully Kiosk Browser and any other Android apps.
  
 You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due to the difficulties of running these tools on Windows and USB faffs, I prefer to use a Raspberry Pi4 running Debian. If you are comfortable with Linux, I would recommend that route.
+
  
 ## Files and installation Prerequisites - WINDOWS ##
 
@@ -94,7 +97,8 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       
       g.	Uncheck Open the Toolkit and Launch ADB & Fastboot++ options, click Finish.
 13.	After installation, Windows should also be in Test Mode which can be seen in the lower left of the desktop.
- 
+
+
 ## Flashing the image - WINDOWS ##
  
 To start from a known state, flash the '200628.084 Teams & Others' firmware/OS to the device. Starting from other images can cause problems, particularly if you've experimented with other images, so it's worth taking this extra step.
@@ -215,6 +219,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
        └── open_gapps-arm-8.1-pico-20220215.zip
    ```
 
+
 ## Flashing the image - LINUX ##
 
 > [!NOTE]
@@ -262,6 +267,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 19. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
 20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
 21. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
+
 
 ## Setting up Android for HA use ##
  
@@ -312,7 +318,7 @@ These setting are what I use on my devices. Feel free to modify as desired.
 9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
 
     
-## Installing a newer webview ##
+## Installing a newer WebView ##
 
 At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.4896.127. You can install a newer version if you like but you need to ensure it's compatible with Android 8.1. I've tried Android System WebView 125.0.6422.165 (arm64-v8a + arm-v7a) (Android 8.0+) which seems to work ok. In basic, non-scientific testing, loading a fairly complex web page app side-by-side, the newer version performed slightly faster. The mealie web app, running within an HA dashboard as a popup and loading the home page with recipe images, was around four seconds faster than the old WebView version. I swapped the WebView version over on both devices and saw the same performance increase, showing it wasn't some other setting affecting performance.
 
@@ -329,6 +335,7 @@ adb install com.google.android.webview_125.0.6422.165-642216501_minAPI26_maxAPI2
 7. Select the new WebView.
 8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
 
+
 ## Troubleshooting and other useful links ##
 
 > [!NOTE]
@@ -344,27 +351,32 @@ The RSA can be found on the Lenovo support site [here](https://support.lenovo.co
 ## Original Lineage 15.1 release notes from @deadman ##
 
 Bugs: 
-Rotation can get stuck sometimes until you toggle auto rotation
-Wifi mac address is the same between devices so if you have multiple you will need to a modification to a file to fix it
-Camera shutter is the power button
-Mic switch is unused but does fire a keycode for 3rd party apps to hook
+Rotation can get stuck sometimes until you toggle auto rotation.
+
+Wifi mac address is the same between devices so if you have multiple you will need to a modification to a file to fix it.
+
+Camera shutter is the power button.
+
+Mic switch is unused but does fire a keycode for 3rd party apps to hook.
 
 OpenGapps Pico gapps package for android 8.1 is the largest you can go without expanding your system partition.
+
 Gapps setup may be a bit unstable until you get fully logged in just keep retrying if it gets stuck with "Getting updates"
 https://sourceforge.net/projects/opengapps/files/arm/20220215/ 
 
-Change the "randomly" generated mac address seed value (Credit: @endlessbeard):
+Tp change the "randomly" generated mac address seed value (Credit: @endlessbeard):
+```
 adb root
 adb pull /vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 edit the file (change the value for Intf0MacAddress) and save
 adb remount
 adb push WCNSS_qcom_cfg.ini /vendor/firmware/wlan/qca_cld/
 adb reboot
-
-Lineage zip
+```
+Lineage zip:
 https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire.zip 
 
-Lineage Recovery Image
+Lineage Recovery Image:
 https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img 
 
 Kernel Source:
@@ -375,5 +387,3 @@ https://github.com/Starfire-development/android_device_lenovo_starfire
 
 Vendor Tree Source (Gatekeeper, DRM/SEE, Graphics, Audio helpers (Not calibration) are from Motorola G6 (Ali), everything else is from stock):
 https://github.com/Starfire-development/proprietary_vendor_lenovo_starfire 
-
-
