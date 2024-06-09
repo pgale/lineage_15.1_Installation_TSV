@@ -21,6 +21,14 @@ _Collated by @pgale_
 
 > [!CAUTION]
 > These instructions and the flashing process does require some technical knowledge and skill. NO warranty or support is provided. If you buy a ThinkSmart View and can't get it flashed for whatever reason, that is down to you. These instructions are provided as a collation of many resources and writings across various forums and Discord servers to save you time and save you reading many hundereds of posts.
+>
+> Lineage 15.1 is still based on core Android 8.1 but has a new custom recovery environment that allows sideloading directly. The open source LineageOS builds on Android (it isn’t just a skinned version of Android!). @Deadman’s build of Lineage for the TSV has carefully picked drivers and other components that are tested to work with this device and some other custom code to make it work better.
+>Previously, I have tried and run (for quite some time) Mattmon’s 8.1 ROM, Android 11 with Google Go Apps and postmarketOS (PMOS) which is Alpine Linux based.
+>All the other options had issues that caused me problems. Lineage OS 15.1 fixes audio not working at all through a browser, weird touchscreen timeouts and problems crashing when booting (A11) if another app is set as the launcher.
+>So for me, it’s stable and just works with everything I’ve tried so far.
+>
+> Whilst I haven't encountered issues, this doesn’t mean that something breaking won’t be found in some odd situation or with other apps I've not tried. The device is still a hacked turnkey MS Teams device that has been built on by using a userdebug image that was leaked from Lenovo. There is **NO SUPPORT** whatsoever from Lenovo or anyone else. This is a discontinued device because it didn't do well as a MS Teams turn-key solution. The Lineage build is UNOFFICIAL so don’t expect any updates apart from anything that @deadman and the other devs working with him may or may not release out of the goodness of their hearts (if they even are able to fix something that crops up). That being said, this retailed for around $350 new and has a great screen, build quality and a good speaker. Getting one for $20-40, shrink-wrapped and brand new in a box is an amazing deal and they work really well as HA dashboards.
+>They do only have 2GB DDR3 RAM though and that shows with more complex, heavy web pages or web apps which can be slow to load. For HA dashboards, and even running a camera feed or two, they work really well, reliably and are reasonably quick for most stuff. Having run five of these for a few months and having tried all the options, I'm still in love with them and Lineage 15.1 wins as the OS!
 
 
 ### Credit where credit is due ###
