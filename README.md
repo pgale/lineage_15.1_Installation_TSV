@@ -185,7 +185,8 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Date & time - set automatic and time zone if not already set
         Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
         About Phone - Tap Build Number until it shows you are a developer
-        Status Bar - System icons - Battery - Don't show this icon (disable anything else to your liking)
+        Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
+  	    (disable anything else to your liking)
 
     Buttons:
 
@@ -195,6 +196,7 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Android debugging - ON
 7.	Install apps from the google app store (as desired).
 8.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+9.	
   
 ## Flashing the image - LINUX (Still to do/finesse) ##
  
