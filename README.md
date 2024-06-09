@@ -176,7 +176,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 27. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
 
-28. Proceed to [Setting up Android for HA](#setting-up-android-for-ha-use)
+28. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
  
   
 ## Files and installation Prerequisites - LINUX ##
@@ -261,7 +261,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 18. Use Vol+/- buttons to select **Reboot**; Slide camera shutter to select
 19. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
 20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
-21. Proceed to **Setting up Android for HA**
+21. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
 ## Setting up Android for HA use ##
  
