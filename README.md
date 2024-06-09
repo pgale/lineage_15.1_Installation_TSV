@@ -251,39 +251,30 @@ These setting are what I use on my devices. Feel free to modify as desired.
 6. Boot TSV into recovery by removing power, holding Vol+, and powering back on
 7. When Lenovo splash screen appears Release vol+ button
 8. LineageOS recovery screen should appear
-9. Use Vol+/- buttons to select apply update
-10. Slide camera shutter to select
-11. Slide camera shutter again to select **Apply from ADB** (default selection)
-12. ADB Sideload is displayed
-13. Sideload lineage image from the connected computer:
+9. Use Vol+/- buttons to highlight **Apply update**; Slide camera shutter to select
+10. Slide camera shutter again to select **Apply from ADB** (default selection); **ADB Sideload** is displayed
+11. Sideload LineageOS image from the connected computer:
 
     `adb sideload ~/ThinkSmartView/lineage-15.1-20240602-UNOFFICIAL-starfire.zip`
 
-    if adb: sideload connection failed: no devices/emulators found
-    reboot
-    E1001: Failed to update system image.
-    reboot
+    > [!NOTE]
+    > If you get the error `adb: sideload connection failed: no devices/emulators found` the connection has likely timed out. Reboot the device into recovery again starting at step 6.
+    >
+    > It is common to see the error `E1001: Failed to update system image.` on the first attempt to sideload the image.  Reboot the device into recovery again starting at step 6.
 
-    Again navigate to ADB sideload
+12. Sideload OpenGapps package. Follow steps 9 and 10 above to place TSV in ADB Sideload, then:
 
     `adb sideload ~/ThinkSmartView/open_gapps-arm-8.1-pico-20220215.zip`
 
-14. Disconnect usb cable
-15. Use Vol+/- buttons to select **Factory reset**
-16. Slide camera shutton to select
-17. Slide camera shutter again to select **Wipe data / factory reset** (default selection)
-18. Use Vol+/- buttons to select **Yes**
-19. Slide camera shutton to select
-20. After reset completes:
-21. Use Vol+/- buttons to select back arrow
-22. Slide camera shutton to select
-23. Use Vol+/- buttons to select **Reboot**
-24. Slide camera shutton to select
-25. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
-26. LineageOS may display an error **Speech Services by Google has stopped**. This is common and not a problem.
-27. Proceed to **Setting up Android for HA**
-
-
+13. Disconnect USB cable
+14. Use Vol+/- buttons to select **Factory reset**; Slide camera shutter to select
+15. Slide camera shutter again to select **Wipe data / factory reset** (default selection)
+16. Use Vol+/- buttons to select **Yes**; Slide camera shutter to select
+17. After reset completes, use Vol+/- buttons to select **back arrow**; Slide camera shutter to select
+18. Use Vol+/- buttons to select **Reboot**; Slide camera shutter to select
+19. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
+20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
+21. Proceed to **Setting up Android for HA**
 
 ## Troubleshooting and other useful links ##
 
