@@ -232,7 +232,7 @@ These setting are what I use on my devices. Feel free to modify as desired.
 
 ## Flashing the image - LINUX ##
 
-1. Connect USB cable to a **USB2** port and the device (not blue).
+1. Connect USB cable to a **USB2** (not blue) port and the USB-C port on the bottom of the TSV.
 
 2. Start EDL
 
