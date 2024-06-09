@@ -148,53 +148,6 @@ You will need to re-select ADB Sideload after each one. The connection times out
 27.	Disconnect the USB cable and power cycle the device. The Lenovo logo will show for a few seconds and then the animated Lineage logo. This takes a little longer on first boot.
 28.	You now have a fabulous and shiny Android device!
  
-## Setting up Android for HA use ##
- 
-These setting are what I use on my devices. Feel free to modify as desired.
- 
-1.	On first boot, run through the setup process, select your Wi-Fi and set up as a new device.
-2.	If you installed the OpenGapps, you will have a chance to sign in to Google.
-3.	Protect your phone - I set Not Now, skip anyway.
-4.	In Google Services, I deselect everything.
-5.	Go to settings and set:
-
-    Display:
-
-        Brightness level - 100%
-      	Adaptive brightness - OFF
-        LiveDisplay - Display Mode - OFF 
-        Style - Style – Dark
-
-    Advanced:
-
-        Sleep - 30 Minutes
-        Rotation settings - Auto-rotate screen toggle off/on (overcomes a possible bug)
-        Tap to Sleep - OFF
-
-    Sound:
-  
-        Set initial volumes as required
-
-  	Security & Privacy:
-
-  	     Screen lock - none
-
-    System:
-
-        Languages & input - check keyboard is set for your region
-        Date & time - set automatic and time zone if not already set
-        Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
-        About Phone - Tap Build Number until it shows you are a developer
-        Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
-  	    (disable anything else to your liking)
-        Buttons - Volume buttons wake device - ON  
-        Developer options:
-           Root access - ADB only
-           Android debugging - ON
-6.	Install apps from the google app store (as desired).
-7.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
-8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
-9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
   
 ## Files and installation Prerequisites - LINUX ##
 
@@ -277,6 +230,55 @@ These setting are what I use on my devices. Feel free to modify as desired.
 20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
 21. Proceed to **Setting up Android for HA**
 
+## Setting up Android for HA use ##
+ 
+These setting are what I use on my devices. Feel free to modify as desired.
+ 
+1.	On first boot, run through the setup process, select your Wi-Fi and set up as a new device.
+2.	If you installed the OpenGapps, you will have a chance to sign in to Google.
+3.	Protect your phone - I set Not Now, skip anyway.
+4.	In Google Services, I deselect everything.
+5.	Go to settings and set:
+
+    Display:
+
+        Brightness level - 100%
+      	Adaptive brightness - OFF
+        LiveDisplay - Display Mode - OFF 
+        Style - Style – Dark
+
+    Advanced:
+
+        Sleep - 30 Minutes
+        Rotation settings - Auto-rotate screen toggle off/on (overcomes a possible bug)
+        Tap to Sleep - OFF
+
+    Sound:
+  
+        Set initial volumes as required
+
+  	Security & Privacy:
+
+  	     Screen lock - none
+
+    System:
+
+        Languages & input - check keyboard is set for your region
+        Date & time - set automatic and time zone if not already set
+        Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
+        About Phone - Tap Build Number until it shows you are a developer
+        Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
+  	    (disable anything else to your liking)
+        Buttons - Volume buttons wake device - ON  
+        Developer options:
+           Root access - ADB only
+           Android debugging - ON
+6.	Install apps from the google app store (as desired).
+7.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
+9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
+
+    
 ## Installing a newer webview ##
 
 At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.4896.127. You can install a newer version if you like but you need to ensure it's compatible with Android 8.1. I've tried Android System WebView 125.0.6422.165 (arm64-v8a + arm-v7a) (Android 8.0+) which seems to work ok. In basic, non-scientific testing, loading a fairly complex web page app side-by-side, the newer version performed slightly faster. The mealie web app, running within an HA dashboard as a popup and loading the home page with recipe images, was around four seconds faster than the old WebView version. I swapped the WebView version over on both devices and saw the same performance increase, showing it wasn't some other setting affecting performance.
