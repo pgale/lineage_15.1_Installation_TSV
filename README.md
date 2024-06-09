@@ -174,8 +174,10 @@ These setting are what I use on my devices. Feel free to modify as desired.
     Sound:
   
         Set initial volumes as required
-        Security & Privacy:
-        Screen lock - none
+
+  	Security & Privacy:
+
+  	     Screen lock - none
 
     System:
 
