@@ -100,30 +100,55 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
 To start from a known state, flash the '200628.084 Teams & Others' firmware/OS to the device. Starting from other images can cause problems, particularly if you've experimented with other images, so it's worth taking this extra step.
  
 1.	Open the QFIL tool (click Start then search for QFIL)
+
 2.	Under Select Build Type, pick Flat Build
+
 3.	Under Select Programmer, browse to the /ThinkSmartView/image folder on your desktop and select: prog_emmc_firehose_8953_ddr.mbn
+
 4.	Under Select Flat Build, click the Load XML button.
+
 5.	Navigate to the file rawprogram_unsparse.xml and click Open
+
 6.	Another file prompt window will open, select patch0.xml and click Open
+
 7.	Make sure the device is switched off at the plug. Plug the USB-C cable into the computer and the device. The USB-C port is under a rubber plug/foot on the bottom of the screen when in landscape orientation. Pull that out, it's just held in place with a little rubber adhesive. (Turning the power off/on at the plug can be easier than pulling out the power connector from the device which is fairly stiff, especially when holding the volume buttons down as in the next steps.)
+
 8.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
+
 9.	In QFIL, click on Select Port.
+
 10.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
+
 11.	Click the Download button and wait while the flasher downloads to the device. It will 'Download Succeed' when completed successfully.
+
 12.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
+
 13.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
+
 14.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
+
 15.	Select the Tools menu and then Partition Manager.
+
 16.	Click OK.
+
 17.	If all is well, you will see a list of partitions. Find recovery in the list and right click it then select "Manage Partition Data"
+
 18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
+
 19.	The flash should finish within 5-10 seconds. Once done click close and then close again but wait before hitting the final ok.
+
 20.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
-Note: If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
+> [!NOTE]
+> If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
+
 21.	The touchscreen does not work in recovery. Navigation in this menu is performed with the vol+ and vol- buttons to move around and the camera privacy slider to activate your choice. Note that you only need to move the camera privacy slider in one direction for it to select the choice - don't push it forward and back in one go as you'll end up selecting something you didn't intend to.
+
 22.	Go to "Factory reset" and then select "Wipe Data / Factory Reset". Select yes and the data and cache partitions will be wiped and formatted.
+
 23.	Go back and select "Apply update" then "Apply from adb". When ADB Sideload is shown in red, the device is ready.
+
 24.	Close QFIL and run ADB and Fastboot++. There should be an icon on your desktop.
+
 25.	To check that your device is detected, type in (press enter after each):
 
 ```
@@ -144,8 +169,11 @@ adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
 adb sideload open_gapps-arm-8.1-pico-20220215.zip
 ```
 
-You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
+> [!NOTE]
+> You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
+
 27.	Disconnect the USB cable and power cycle the device. The Lenovo logo will show for a few seconds and then the animated Lineage logo. This takes a little longer on first boot.
+
 28.	You now have a fabulous and shiny Android device!
  
   
@@ -214,10 +242,10 @@ You will need to re-select ADB Sideload after each one. The connection times out
 11. Sideload LineageOS image from the connected computer:
     `adb sideload ~/ThinkSmartView/lineage-15.1-20240602-UNOFFICIAL-starfire.zip`
 
-    > [!NOTE]
-    > If you get the error `adb: sideload connection failed: no devices/emulators found` the connection has likely timed out. Reboot the device into recovery again starting at step 6.
-    >
-    > It is common to see the error `E1001: Failed to update system image.` on the first attempt to sideload the image.  Reboot the device into recovery again starting at step 6.
+> [!NOTE]
+> If you get the error `adb: sideload connection failed: no devices/emulators found` the connection has likely timed out. Reboot the device into recovery again starting at step 6.
+>
+> It is common to see the error `E1001: Failed to update system image.` on the first attempt to sideload the image.  Reboot the device into recovery again starting at step 6.
 
 12. Sideload OpenGapps package. Follow steps 9 and 10 above to place TSV in ADB Sideload, then:
 
