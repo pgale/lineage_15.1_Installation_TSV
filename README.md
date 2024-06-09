@@ -196,40 +196,86 @@ These setting are what I use on my devices. Feel free to modify as desired.
 8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
 9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
   
-## Flashing the image - LINUX (Still to do/finesse) ##
- 
-> [!NOTE]
-> I store my ROM images in folders under /edl. In the code blocks below, modify them to reflect where you have put your image files.
-> I run EDL on a Pi4 built with Debian. I find the USB flashing method is more reliable than using Windows and once you are used to it, is much quicker to spin up a new device.
+## Files and installation Prerequisites - LINUX ##
 
-Log into linux.
+1. Install EDL as described here: https://github.com/bkerler/edl
 
-Connect USB cable to the device. 
+2. In your home dir, create a folder named ThinkSmartView
 
-Boot the device into EDL by using both vol keys and plugging in power.
+    `mkdir ThinkSmartView`
+3. Download the [200628.084 Teams & Others](https://xdaforums.com/t/cd-18781y-lenovo-thinksmart-view-bootloader-firmware-zoom-teams-conversion-normal-android.4426029/) firmware provided on the XDA Forum thread (At the bottom of the first post under Downloads)
 
-```
-cd edl
-./edl qfil /home/pi/edl/084teams/rawprogram_unsparse.xml /home/pi/edl/084teams/patch0.xml /home/pi/edl/084teams --loader=/home/pi/edl/084temas/prog_emmc_firehose_8953_ddr.mbn
-cd edl/lineage
-edl w aboot emmc_appsboot.mbn
-edl w abootbak emmc_appsboot.mbn
-edl w recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
-```
- 
-Boot into recovery (vol+ and power on)
+    `wget https://s3.wasabisys.com/filestash-buk/lenovo-thinksmart-view/CD-18781Y.200628.084.zip`
 
-Select apply update - ADB sideload
+4. Extract the 'image' folder from the downloaded zip file to the ThinkSmartView folder. You will then have the folder structure /ThinkSmartView/image on your desktop with all the files in the image folder.
 
-Sideload lineage image from the connected computer:
+    `unzip -j ~/CD-18781Y.200628.084.zip "CD-18781Y.200628.084/image/*" -d ~/ThinkSmartView/image`
 
-```
-adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
-adb sideload open_gapps-arm-8.1-pico-20220215.zip
-```
-Factory reset
- 
-reboot into Lineage OS
+5. Download the [Lineage recovery file](https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img)
+
+    `wget https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img`
+6. Download the [Lineage file](https://drive.google.com/file/d/1m34JjwxukdH8Y5WEUCZuPSiyrQHrI6ke/view?usp=sharing) to ~/ThinkSmartView
+7. Download the [OpenGapps package](https://sourceforge.net/projects/opengapps/files/arm/20220215/open_gapps-arm-8.1-pico-20220215.zip/download) (for google play store) to ~/ThinkSmartView
+8. DO NOT Extract these files. Leave them as zip/img files in your ThinkSmartView folder. Your file/folder structure should look like this:
+
+   ``` sh
+   /home/pi
+   └── ThinkSmartView
+       ├── image
+       │   ├── adspso.bin
+       │   ├── boot.img
+       │   ├── [108 other files]
+       │   ├── zeros_1sector.bin
+       │   └── zeros_33sectors.bin
+       ├── lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
+       ├── lineage-15.1-20240602-UNOFFICIAL-starfire.zip
+       └── open_gapps-arm-8.1-pico-20220215.zip
+   ```
+
+## Flashing the image - LINUX ##
+
+1. Connect USB cable to a **USB2** (not blue) port and the USB-C port on the bottom of the TSV.
+
+2. Start EDL
+
+    `~/edl/edl qfil ~/ThinkSmartView/image/rawprogram_unsparse.xml ~/ThinkSmartView/image/patch0.xml ~/ThinkSmartView/image --loader=/home/pi/ThinkSmartView/image/prog_emmc_firehose_8953_ddr.mbn`
+
+3. Boot the device into EDL by holding both vol keys and plugging in power.
+4. Release buttons once EDL starts writing to device
+5. After EDL completes, copy boot files and recovery image to device using the following 3 commands one at a time:
+
+    `edl w aboot ~/ThinkSmartView/image/emmc_appsboot.mbn`
+
+    `edl w abootbak ~/ThinkSmartView/image/emmc_appsboot.mbn`
+
+    `edl w recovery ~/ThinkSmartView/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img`
+
+6. Boot TSV into recovery by removing power, holding Vol+, and powering back on
+7. When Lenovo splash screen appears Release vol+ button
+8. LineageOS recovery screen should appear
+9. Use Vol+/- buttons to highlight **Apply update**; Slide camera shutter to select
+10. Slide camera shutter again to select **Apply from ADB** (default selection); **ADB Sideload** is displayed
+11. Sideload LineageOS image from the connected computer:
+    `adb sideload ~/ThinkSmartView/lineage-15.1-20240602-UNOFFICIAL-starfire.zip`
+
+    > [!NOTE]
+    > If you get the error `adb: sideload connection failed: no devices/emulators found` the connection has likely timed out. Reboot the device into recovery again starting at step 6.
+    >
+    > It is common to see the error `E1001: Failed to update system image.` on the first attempt to sideload the image.  Reboot the device into recovery again starting at step 6.
+
+12. Sideload OpenGapps package. Follow steps 9 and 10 above to place TSV in ADB Sideload, then:
+
+    `adb sideload ~/ThinkSmartView/open_gapps-arm-8.1-pico-20220215.zip`
+
+13. Disconnect USB cable
+14. Use Vol+/- buttons to select **Factory reset**; Slide camera shutter to select
+15. Slide camera shutter again to select **Wipe data / factory reset** (default selection)
+16. Use Vol+/- buttons to select **Yes**; Slide camera shutter to select
+17. After reset completes, use Vol+/- buttons to select **back arrow**; Slide camera shutter to select
+18. Use Vol+/- buttons to select **Reboot**; Slide camera shutter to select
+19. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
+20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
+21. Proceed to **Setting up Android for HA**
 
 ## Installing a newer webview ##
 
