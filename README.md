@@ -187,6 +187,9 @@ You will need to re-select ADB Sideload after each one. The connection times out
 
 ## Flashing the image - LINUX ##
 
+> [!NOTE]
+> These expanded Linux install instructions are based on two successful flashes using a Pi 5. One using a TSV with 8.1 already installed and functioning, the other using a fresh device, right out of the box booted into EDL the very first time it was powered on.
+
 1. Connect USB cable to a **USB2** (not blue) port and the USB-C port on the bottom of the TSV.
 
 2. Start EDL
