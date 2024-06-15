@@ -266,6 +266,9 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
     `adb sideload ~/ThinkSmartView/open_gapps-arm-8.1-pico-20220215.zip`
 
+> [!NOTE]
+> You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
+
 13. Disconnect USB cable
 14. Use Vol+/- buttons to select **Factory reset**; Slide camera shutter to select
 15. Slide camera shutter again to select **Wipe data / factory reset** (default selection)
