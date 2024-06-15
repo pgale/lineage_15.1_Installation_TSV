@@ -335,6 +335,17 @@ At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.489
 
 If you want to install a particular version from apkmirror, follow these instructions. You can also search for WebView in the Google Play Store (as reported by other users) although it never showed up for me. Apparently you can also install Google Chrome which may install a newer WebView but I've not tried this as I don't need Chrome on my devices.
 
+# Method 1 - Easy #
+1. On the device itself, download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
+2. Open the files app.
+3. Find where you downloaded the file to - possible downloads.
+4. Tap the file to install it and follow the prompts.
+5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
+6. You should see both the original and the new WebView versions.
+7. Select the new WebView.
+8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
+
+# Method 2 - ADB Install #
 1. Download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
 2. Copy the file to a folder on your Linux or Windows machine that has ADB installed.
 3. WINDOWS - Run the ADB & Fastboot++ shortcut (installed as per the instructions above)
@@ -347,7 +358,6 @@ adb install com.google.android.webview_125.0.6422.165-642216501_minAPI26_maxAPI2
 6. You should see both the original and the new WebView versions.
 7. Select the new WebView.
 8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
-
 
 ## Troubleshooting and other useful links ##
 
