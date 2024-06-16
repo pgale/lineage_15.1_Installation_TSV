@@ -341,7 +341,7 @@ If you want to install a particular version from apkmirror, follow these instruc
 ### Method 1 - Easy ###
 1. On the device itself, download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
 2. Open the files app.
-3. Find where you downloaded the file to - possibly in **downloads**.
+3. Find where you downloaded the file to - possibly in `downloads`.
 4. Tap the file to install it and follow the prompts.
 5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
 6. You should see both the original and the new WebView versions.
