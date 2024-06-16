@@ -153,6 +153,10 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 > [!NOTE]
 > If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
 
+<img src="https://github.com/pgale/lineage_15.1_Installation_TSV/assets/513044/514540ed-6765-43b4-9389-ab2998ce2c2f" alt="Lineage 15.1 recovery environment" width="200">
+
+*This is what the Lineage recovery environment looks like. If you have something different (a list of text options), you didn't succeed in flashing. Try again until you see this recovery screen. [Image credit @ADHDSquir]*
+
 21.	The touchscreen does not work in recovery. Navigation in this menu is performed with the vol+ and vol- buttons to move around and the camera privacy slider to activate your choice. Note that you only need to move the camera privacy slider in one direction for it to select the choice - don't push it forward and back in one go as you'll end up selecting something you didn't intend to.
 
 22.	Go to "Factory reset" and then select "Wipe Data / Factory Reset". Select yes and the data and cache partitions will be wiped and formatted.
