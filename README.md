@@ -168,6 +168,7 @@ adb devices
 ```
 
 If the device is found, it will show something like HUAOBJNM sideload.
+
 26.	Navigate to the ThinkSmartView folder. For example:
 
 ```
@@ -184,11 +185,13 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 > [!NOTE]
 > You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
 
-27. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
+27. Select "Reboot" and **don't** hold down any buttons - let it now boot into the Lineagge OS.
 
-28. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
+28. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
 
-29. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
+29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
+
+30. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
  
   
 ## Files and installation Prerequisites - LINUX ##
