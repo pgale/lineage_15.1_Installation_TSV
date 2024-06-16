@@ -394,15 +394,6 @@ OpenGapps Pico gapps package for android 8.1 is the largest you can go without e
 Gapps setup may be a bit unstable until you get fully logged in just keep retrying if it gets stuck with "Getting updates"
 https://sourceforge.net/projects/opengapps/files/arm/20220215/ 
 
-Tp change the "randomly" generated mac address seed value (Credit: @endlessbeard):
-```
-adb root
-adb pull /vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
-edit the file (change the value for Intf0MacAddress) and save
-adb remount
-adb push WCNSS_qcom_cfg.ini /vendor/firmware/wlan/qca_cld/
-adb reboot
-```
 Lineage zip:
 https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire.zip 
 
