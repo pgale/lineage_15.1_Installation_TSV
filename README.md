@@ -183,6 +183,8 @@ Now run these commands:
  
 ```
 adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
+```
+```
 adb sideload open_gapps-arm-8.1-pico-20220215.zip
 ```
 
