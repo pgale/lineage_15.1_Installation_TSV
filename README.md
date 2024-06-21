@@ -20,7 +20,7 @@ _Collated by @pgale_
 > Warning - these posts and discussions are VERY long!
 
 > [!CAUTION]
-> These instructions and the flashing process does require some technical knowledge and skill. NO warranty or support is provided. If you buy a ThinkSmart View and can't get it flashed for whatever reason, that is down to you. These instructions are provided as a collation of many resources and writings across various forums and Discord servers to save you time and save you reading many hundereds of posts.
+> These instructions and the flashing process does require some technical knowledge and skill. NO warranty or support is provided. If you buy a ThinkSmart View and can't get it flashed for whatever reason, that is down to you. These instructions are provided as a collation of many resources and writings across various forums and Discord servers to save you time and save you reading many hundereds of posts. I have upgraded five ThinkSmart View devices from other versions of Android 8.1, 11 and postmarketOS. I have also installed Lineage 15.1 on two brand new, shrink-wrapped devices and all have installed perfectly, both via Windows and Linux.
 >
 > Lineage 15.1 is still based on core Android 8.1 but has a new custom recovery environment that allows sideloading directly. The open source LineageOS builds on Android (it isn’t just a skinned version of Android!). @Deadman’s build of Lineage for the TSV has carefully picked drivers and other components that are tested to work with this device and some other custom code to make it work better.
 >Previously, I have tried and run (for quite some time) Mattmon’s 8.1 ROM, Android 11 with Google Go Apps and postmarketOS (PMOS) which is Alpine Linux based.
@@ -376,6 +376,30 @@ The RSA can be found on the Lenovo support site [here](https://support.lenovo.co
 - It seems that the three-button navigation bar at the bottom doesn't rotate to the bottom of the screen when in landscape orientation. One user also reported that he couldn't get apps to stay in landscape mode. I'll update here if I find out more/a fix.
 
 - From @chewza on Discord: For those with secure boot enabled, they need to temporarily disable that inside windows first otherwise bitlocker asks for their recovery key on the subsequent boot.
+
+- Many other versions of the OpenGApps package are available but may not fit in the device due to the size of the system partition. Partition sizes are adjustable but I've not tried it yet and it isn't documented in this guide. I have tried the nano version `open_gapps-arm-8.1-nano-20220215.zip` and it . I have only tried the 8.1 versions, other versions may not work.
+[SourceForge OpenGApps](https://sourceforge.net/projects/opengapps/files/arm/20220215/)
+
+For reference, these are the variants of OpenGApps:
+
+    Aroma: Graphical installer of the super package while in recovery menu, it allows user to select which applications to install.
+
+    Super: Includes all Google Apps that were ever shipped on a Google device.
+
+    Stock: Recommended package that contains all Google Apps that come standard on latest Nexus/Pixel phone.
+
+    Full : Very similar to Stock version.
+
+    Mini : Smaller set of popular Google Apps with extra functionality.
+
+    Micro: Limited set of Google Apps with Gmail, Calendar Google Now with extra functionality.
+
+    Nano : Minimal installation with extra functionality.
+
+    Pico : Minimum with Google Play functionality.
+    
+    (Each package's file size varies with the included Google Apps)
+
 
 
 ## Original Lineage 15.1 release notes from @deadman ##
