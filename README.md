@@ -377,7 +377,7 @@ The RSA can be found on the Lenovo support site [here](https://support.lenovo.co
 
 - From @chewza on Discord: For those with secure boot enabled, they need to temporarily disable that inside windows first otherwise bitlocker asks for their recovery key on the subsequent boot.
 
-- Many other versions of the OpenGApps package are available but may not fit in the device due to the size of the system partition. Partition sizes are adjustable but I've not tried it yet and it isn't documented in this guide. I have tried the nano version `open_gapps-arm-8.1-nano-20220215.zip` and it . I have only tried the 8.1 versions, other versions may not work.
+- Many other versions of the OpenGApps package are available but may not fit in the device due to the size of the system partition. Partition sizes are adjustable but I've not tried it yet and it isn't documented in this guide. I have tried the nano version `open_gapps-arm-8.1-nano-20220215.zip` and it installs and works OK. I have only tried the 8.1 versions, other versions may not work. The nano version, in addition to the Play Store, installs the Google app and Voice Search. For me, I've not found a reason to install anything but pico so far.
 [SourceForge OpenGApps](https://sourceforge.net/projects/opengapps/files/arm/20220215/)
 
 For reference, these are the variants of OpenGApps:
@@ -400,7 +400,7 @@ For reference, these are the variants of OpenGApps:
     
     (Each package's file size varies with the included Google Apps)
 
-
+- There seems to be an issue with Wi-Fi dropping out if not kept alive. This has been reported by some users to require a reboot of the device. It's not known what actually causes this and I have seen it only once across my devices but only when left with Fully Kiosk not running. Turning the Wi-Fi switch off/on enabled it to reconnect. When running Fully Kiosk, I haven't experienced any issues. I also run a nightly browser restart via Fully Kiosk Browser. 
 
 ## Original Lineage 15.1 release notes from @deadman ##
 
