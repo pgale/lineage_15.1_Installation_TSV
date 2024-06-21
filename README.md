@@ -147,7 +147,7 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 
-19.	The flash should finish within 5-10 seconds. Once done click close and then close again but wait before hitting the final ok.
+19.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
 
 20.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
 > [!NOTE]
@@ -171,7 +171,7 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 adb devices
 ```
 
-If the device is found, it will show something like HUAOBJNM sideload.
+The ADB daemon will start (a few seconds) and if the device is found, it will show something like HUAOBJNM sideload. Your device name will be different.
 
 26.	Navigate to the ThinkSmartView folder. For example:
 
@@ -187,13 +187,13 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 ```
 
 > [!NOTE]
-> You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
+> You will need to re-select ADB Sideload after each sideload. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
 
 27. Select "Reboot" and **don't** hold down any buttons - let it now boot into the Lineagge OS.
 
-28. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
+28. After Lenovo splash screen, LineageOS boot animation will play for a few minutes while the OS sets up. I timed a brand new device and it took 1min 20ses.
 
-29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
+29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem.
 
 30. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
  
