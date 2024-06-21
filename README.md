@@ -131,7 +131,7 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 10.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
 
-11.	Click the Download button and wait while the flasher downloads to the device. It will 'Download Succeed' when completed successfully.
+11.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
 
 12.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
 
