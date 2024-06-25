@@ -12,9 +12,9 @@ You have 2 options at this point:
 4. When the boot screen comes up you will want to enter number 7 for "Disable Driver Enforcement Signature"
 5. Once Windows loads you should be good to go, but check if the Yellow "!" has gone from the driver. Some machines who are AD or AAD joined will have Group Policies overriding your decision - which means you'll need option 2 below
 
-##2. Self-sign the device driver
+## 2. Self-sign the device driver ##
 [The original post is here (but I have modified it as the post was out of date and had a couple of errors)](https://woshub.com/how-to-sign-an-unsigned-driver-for-windows-7-x64/)
-###First we need to download the tools needed
+### First we need to download the tools needed ###
 1. Download the drivers in this repo (qcser.sys & qcser.inf) to `c:/DriverCert/qcser/`
 2. To avoid downloading the WDK and Windows SDK I used the Enterprise WDK which is much easier. [Download the .iso here](https://go.microsoft.com/fwlink/?linkid=2271957)
 3. Mount the ISO
@@ -22,7 +22,7 @@ You have 2 options at this point:
 5. In the environment created type `SetupVSEnv`, and then press Enter.
 6. Navigate to "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\"
 7. Run `devenv.exe`
-###Now we can get into the driver signing.
+### Now we can get into the driver signing. ###
 8. Open up Powershell as an admin and run the following code (but take close attention to the " quotes " as they seem to be missed when copy and pasting.
 ```
 $todaydate = Get-Date
