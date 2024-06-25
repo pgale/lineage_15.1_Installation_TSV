@@ -1,11 +1,11 @@
-#The qualcomm driver needed to flash the Lenovo device in Windows is not signed. This means the 9008 driver shows as unsigned and as such won't allow you to flash the Lenovo device by the QFIL tool.
+# The qualcomm driver needed to flash the Lenovo device in Windows is not signed. This means the 9008 driver shows as unsigned and as such won't allow you to flash the Lenovo device by the QFIL tool. #
 
 You have 2 options at this point:
 
-##1. Used Advanced Startup to temporarily disable device driver signing (Note after each reboot Device Driver Signature enforcement is reenabled)
-##2. Self-sign the device driver (more complex, but if you are flashing multiple devices worthwhile)
+## 1. Used Advanced Startup to temporarily disable device driver signing (Note after each reboot Device Driver Signature enforcement is reenabled) ##
+## 2. Self-sign the device driver (more complex, but if you are flashing multiple devices worthwhile) ##
 
-##1. Advanced Startup (If you have Bitlocker enabled this will prompt you for a recovery key or you can suspend bitlocker)
+## 1. Advanced Startup (If you have Bitlocker enabled this will prompt you for a recovery key or you can suspend bitlocker) ##
 1. Open the Start Menu and while holding the shift key click restart. (if this doesnt work you can access the same features via recovery options in Windows Update)
 2. When you boot into the Windows RE environment, select Troubleshoot and then Advanced Options. [visual guide her](https://www.tenforums.com/tutorials/156602-how-enable-disable-driver-signature-enforcement-windows-10-a.html)
 3. Then select StartUp Options and restart.
