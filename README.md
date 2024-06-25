@@ -72,7 +72,11 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
    	  g.	Finish
 
    	  h.	Restart PC when prompted at the end.
-11.	Install QPST 
+
+> [!NOTE]
+> If you have troubles getting the USB driver working @jaburges has provided some documentation here - [Windows unsigned driver solution](Windows_unsigned_driver_solution.md)
+
+12.	Install QPST 
 
       a.	Open the QPST 2.7.496 folder
       
@@ -89,7 +93,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       g.	Click Next two more times. Then click Install
       
       h.	Click Finish when done.
-12.	Install ABD & Fastboot ++ 
+13.	Install ABD & Fastboot ++ 
 
       a.	Double click the file ADB-and-Fastboot++_v1.0.8.exe
      
@@ -104,7 +108,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       f.	Click Install.
       
       g.	Uncheck Open the Toolkit and Launch ADB & Fastboot++ options, click Finish.
-13.	After installation, Windows should also be in Test Mode which can be seen in the lower left of the desktop.
+14.	After installation, Windows should also be in Test Mode which can be seen in the lower left of the desktop.
 
 
 ## Flashing the image - WINDOWS ##
