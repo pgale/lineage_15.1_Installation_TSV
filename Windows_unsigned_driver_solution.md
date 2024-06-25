@@ -7,7 +7,7 @@ You have 2 options at this point:
 
 ## 1. Advanced Startup (If you have Bitlocker enabled this will prompt you for a recovery key or you can suspend bitlocker) ##
 1. Open the Start Menu and while holding the shift key click restart. (if this doesnt work you can access the same features via recovery options in Windows Update)
-2. When you boot into the Windows RE environment, select Troubleshoot and then Advanced Options. [visual guide her](https://www.tenforums.com/tutorials/156602-how-enable-disable-driver-signature-enforcement-windows-10-a.html)
+2. When you boot into the Windows RE environment, select Troubleshoot and then Advanced Options. [visual guide here](https://www.tenforums.com/tutorials/156602-how-enable-disable-driver-signature-enforcement-windows-10-a.html)
 3. Then select StartUp Options and restart.
 4. When the boot screen comes up you will want to enter number 7 for "Disable Driver Enforcement Signature"
 5. Once Windows loads you should be good to go, but check if the Yellow "!" has gone from the driver. Some machines who are AD or AAD joined will have Group Policies overriding your decision - which means you'll need option 2 below
