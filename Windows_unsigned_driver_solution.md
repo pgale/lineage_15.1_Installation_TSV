@@ -18,7 +18,7 @@ You have 2 options at this point:
 1. Download the drivers in this repo (qcser.sys & qcser.inf) to `c:/DriverCert/qcser/`
 2. To avoid downloading the WDK and Windows SDK I used the Enterprise WDK which is much easier. [Download the .iso here](https://go.microsoft.com/fwlink/?linkid=2271957)
 3. Mount the ISO
-4. From a admin CMD Prompt navigate to the mouted drive and run `Run LaunchBuildEnv.cmd`
+4. From a admin CMD Prompt navigate to the mouted drive and run `LaunchBuildEnv.cmd`
 5. In the environment created type `SetupVSEnv`, and then press Enter.
 6. Navigate to "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\"
 7. Run `devenv.exe`
