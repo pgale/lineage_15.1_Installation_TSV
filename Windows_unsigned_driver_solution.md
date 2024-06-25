@@ -46,9 +46,6 @@ Import-Certificate -CertStoreLocation Cert:\LocalMachine\AuthRoot -FilePath $cer
 ```
 Import-Certificate -CertStoreLocation Cert:\LocalMachine\TrustedPublisher -FilePath $certFile.FullName
 ```
-```
-signtool sign /tr http://timestamp.digicert.com /fd SHA256 /v /f C:\DriverCert\myDrivers.pfx /p abc123 "C:\DriverCert\qcser\qcser.cat"
-```
 11. Now the cert is trusted, we need to sign the driver. This time open a CMD prompt as an admin and run the following:
 ```
 cd “C:\Program Files (x86)\Windows Kits\10\bin\10.0.22000.0\x86”
