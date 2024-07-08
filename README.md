@@ -202,6 +202,9 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem.
 
 30. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
+
+> [!NOTE]
+> @ripcityhandyman reported the following on his three devices: After connecting to WiFi on the initial boot of Lineage, "Checking for updates" appears. On all three of my copies, the setup process hangs on this step indefinitely. The trick I found was to touch the "back" button after a few seconds. You'll actually see another "Checking for updates" page slide across from the left edge, on top of the existing "Checking for updates" page. It's at this point where touching "back" will allow the setup process to continue. If touching "back" returns you to the network list, then you didn't wait long enough.
  
   
 ## Files and installation Prerequisites - LINUX ##
