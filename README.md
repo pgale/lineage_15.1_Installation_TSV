@@ -226,7 +226,9 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
     `wget https://s3.us-west-1.wasabisys.com/rom-release/LineageOS/15.1/starfire/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img`
 6. Download the [Lineage file](https://drive.google.com/file/d/1m34JjwxukdH8Y5WEUCZuPSiyrQHrI6ke/view?usp=sharing) to ~/ThinkSmartView
+
 7. Download the [OpenGapps package](https://sourceforge.net/projects/opengapps/files/arm/20220215/open_gapps-arm-8.1-pico-20220215.zip/download) (for google play store) to ~/ThinkSmartView
+
 8. DO NOT Extract these files. Leave them as zip/img files in your ThinkSmartView folder. Your file/folder structure should look like this:
 
    ``` sh
@@ -256,7 +258,9 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
     `~/edl/edl qfil ~/ThinkSmartView/image/rawprogram_unsparse.xml ~/ThinkSmartView/image/patch0.xml ~/ThinkSmartView/image --loader=/home/pi/ThinkSmartView/image/prog_emmc_firehose_8953_ddr.mbn`
 
 3. Boot the device into EDL by holding both vol keys and plugging in power.
+
 4. Release buttons once EDL starts writing to device
+
 5. After EDL completes, copy boot files and recovery image to device using the following 3 commands one at a time:
 
     `edl w aboot ~/ThinkSmartView/image/emmc_appsboot.mbn`
@@ -266,10 +270,15 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
     `edl w recovery ~/ThinkSmartView/lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img`
 
 6. Boot TSV into recovery by removing power, holding Vol+, and powering back on
+
 7. When Lenovo splash screen appears Release vol+ button
+
 8. LineageOS recovery screen should appear
+
 9. Use Vol+/- buttons to highlight **Apply update**; Slide camera shutter to select
+
 10. Slide camera shutter again to select **Apply from ADB** (default selection); **ADB Sideload** is displayed
+
 11. Sideload LineageOS image from the connected computer:
     `adb sideload ~/ThinkSmartView/lineage-15.1-20240602-UNOFFICIAL-starfire.zip`
 
@@ -286,14 +295,25 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 > You will need to re-select ADB Sideload after each one. The connection times out quite quickly so you will need to select the ADB Sideload just before you send the command. If it's working, you will see a progress update on both the command line and on the device. Don't worry if it sits at 47% for up to a minute or so, it's still working.
 
 13. Disconnect USB cable
+
 14. Use Vol+/- buttons to select **Factory reset**; Slide camera shutter to select
+
 15. Slide camera shutter again to select **Wipe data / factory reset** (default selection)
+
 16. Use Vol+/- buttons to select **Yes**; Slide camera shutter to select
+
 17. After reset completes, use Vol+/- buttons to select **back arrow**; Slide camera shutter to select
+
 18. Use Vol+/- buttons to select **Reboot**; Slide camera shutter to select
+
 19. After Lenovo splash screen, LineageOS boot animation will play for up to 5 minutes as the OS sets up.
+
 20. LineageOS may display the error **Speech Services by Google has stopped**. This is common and not a problem.
-21. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
+
+> [!NOTE]
+> @ripcityhandyman reported the following on his three devices: After connecting to WiFi on the initial boot of Lineage, "Checking for updates" appears. On all three of my copies, the setup process hangs on this step indefinitely. The trick I found was to touch the "back" button after a few seconds. You'll actually see another "Checking for updates" page slide across from the left edge, on top of the existing "Checking for updates" page. It's at this point where touching "back" will allow the setup process to continue. If touching "back" returns you to the network list, then you didn't wait long enough.
+
+22. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
 
 ## Setting up Android for HA use ##
@@ -353,26 +373,39 @@ If you want to install a particular version from apkmirror, follow these instruc
 
 ### Method 1 - Easy ###
 1. On the device itself, download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
+
 2. Open the files app.
+
 3. Find where you downloaded the file to - possibly in `downloads`.
+
 4. Tap the file to install it and follow the prompts.
+
 5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
+
 6. You should see both the original and the new WebView versions.
+
 7. Select the new WebView.
+
 8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
 
 ### Method 2 - ADB Install ###
 1. Download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
+
 2. Copy the file to a folder on your Linux or Windows machine that has ADB installed.
+
 3. WINDOWS - Run the ADB & Fastboot++ shortcut (installed as per the instructions above)
+
 4. Install the WebView:
 
 ```
 adb install com.google.android.webview_125.0.6422.165-642216501_minAPI26_maxAPI28(arm64-v8a,armeabi-v7a)(nodpi)_apkmirror.com.apk
 ```
 5. On the ThinkSmart View, open settings - system - Developer options - Webview implementation.
+
 6. You should see both the original and the new WebView versions.
+
 7. Select the new WebView.
+
 8. (optional) If using Fully Kiosk Browser, you can also check what version of WebView you are using by going to settings - advanced web settings - select webview implementation (at the bottom)
 
 ## Troubleshooting and other useful links ##
