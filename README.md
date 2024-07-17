@@ -129,31 +129,34 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 7.	Make sure the device is switched off at the plug. Plug the USB-C cable into the computer and the device. The USB-C port is under a rubber plug/foot on the bottom of the screen when in landscape orientation. Pull that out, it's just held in place with a little rubber adhesive. (Turning the power off/on at the plug can be easier than pulling out the power connector from the device which is fairly stiff, especially when holding the volume buttons down as in the next steps.)
 
-8.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
+9.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
 
-9.	In QFIL, click on Select Port.
+> [!NOTE]
+> Leaving the device on EDL for too long might cause the following error "main:320 Uploading Image using Sahara protocol failed". Be sure to redo step 7 and 9 if you are switching cables.
 
-10.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
+11.	In QFIL, click on Select Port.
 
-11.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
+12.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
 
-12.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
+13.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
 
-13.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
+14.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
 
-14.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
+15.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
 
-15.	Select the Tools menu and then Partition Manager.
+16.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
 
-16.	Click OK.
+17.	Select the Tools menu and then Partition Manager.
 
-17.	If all is well, you will see a list of partitions. Find recovery in the list and right click it then select "Manage Partition Data"
+18.	Click OK.
 
-18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
+19.	If all is well, you will see a list of partitions. Find recovery in the list and right click it then select "Manage Partition Data"
 
-19.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
+20.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 
-20.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
+21.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
+
+22.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
 > [!NOTE]
 > If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
 
