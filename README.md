@@ -449,8 +449,6 @@ For reference, these are the variants of OpenGApps:
 Bugs: 
 Rotation can get stuck sometimes until you toggle auto rotation.
 
-Wifi mac address is the same between devices so if you have multiple you will need to a modification to a file to fix it.
-
 Camera shutter is the power button.
 
 Mic switch is unused but does fire a keycode for 3rd party apps to hook.
