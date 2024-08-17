@@ -211,6 +211,9 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 1. Install EDL as described here: https://github.com/bkerler/edl
 
+> [!NOTE]
+> Some users have experienced issues installing EDL with later version of Python. [See this discussion for a possible solution.](https://github.com/pgale/lineage_15.1_Installation_TSV/discussions/19)
+
 2. In your home dir, create a folder named ThinkSmartView
 
     `mkdir ThinkSmartView`
