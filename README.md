@@ -147,7 +147,7 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 16.	Click OK.
 
-17.	If all is well, you will see a list of partitions. Find recovery in the list and right click it then select "Manage Partition Data"
+17.	If all is well, you will see a list of partitions. Find "recovery" in the list and right click it then select "Manage Partition Data"
 
 18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 
@@ -188,6 +188,7 @@ Now run these commands:
 ```
 adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
 ```
+Go back and select "Apply update" then "Apply from adb". When ADB Sideload is shown in red, the device is ready.
 ```
 adb sideload open_gapps-arm-8.1-pico-20220215.zip
 ```
