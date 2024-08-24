@@ -188,7 +188,7 @@ Now run these commands:
 ```
 adb sideload lineage-15.1-20240602-UNOFFICIAL-starfire.zip
 ```
-Go back and select "Apply update" then "Apply from adb". When ADB Sideload is shown in red, the device is ready.
+After completing you will again select "Apply update" then "Apply from adb". When ADB Sideload is shown in red, the device is ready.
 ```
 adb sideload open_gapps-arm-8.1-pico-20220215.zip
 ```
