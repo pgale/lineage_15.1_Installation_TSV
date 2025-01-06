@@ -199,7 +199,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 28. After Lenovo splash screen, LineageOS boot animation will play for a few minutes while the OS sets up. I timed a brand new device and it took 1min 20ses.
 
-29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem.
+29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem. Tap to dismiss it.
 
 30. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
@@ -326,8 +326,10 @@ These setting are what I use on my devices. Feel free to modify as desired.
 1.	On first boot, run through the setup process, select your Wi-Fi and set up as a new device.
 2.	If you installed the OpenGapps, you will have a chance to sign in to Google.
 3.	Protect your phone - I set Not Now, skip anyway.
-4.	In Google Services, I deselect everything.
-5.	Go to settings and set:
+4.	In Google Services, I deselect everything. Tap Next.
+5.	Then decide to check of uncheck the options on the LineageOS Features page, and tap Next.
+6.	Tap Start and it will take you to the home screen.
+7.	Go to settings and set:
 
     Display:
 
@@ -355,17 +357,17 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Languages & input - check keyboard is set for your region
         Date & time - set automatic and time zone if not already set
         Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
-        About Phone - Tap Build Number until it shows you are a developer
         Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
-  	    (disable anything else to your liking)
-        Buttons - Volume buttons wake device - ON  
+  	    (disable any other system icons to your liking)
+        Buttons - Volume buttons wake device - ON
+  	     About Phone - Tap Build Number until it shows you are a developer
         Developer options:
            Root access - ADB only
            Android debugging - ON
-6.	Install apps from the google app store (as desired).
-7.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
-8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
-9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
+9.	Install apps from the google app store (as desired).
+10.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+11.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
+12.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
 
     
 ## Installing a newer WebView ##
