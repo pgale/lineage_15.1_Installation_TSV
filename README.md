@@ -129,31 +129,34 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 7.	Make sure the device is switched off at the plug. Plug the USB-C cable into the computer and the device. The USB-C port is under a rubber plug/foot on the bottom of the screen when in landscape orientation. Pull that out, it's just held in place with a little rubber adhesive. (Turning the power off/on at the plug can be easier than pulling out the power connector from the device which is fairly stiff, especially when holding the volume buttons down as in the next steps.)
 
-8.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
+9.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
 
-9.	In QFIL, click on Select Port.
+> [!NOTE]
+> Leaving the device on EDL for too long might cause the following error "main:320 Uploading Image using Sahara protocol failed". Be sure to redo step 7 and 9 if you are switching cables.
 
-10.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
+11.	In QFIL, click on Select Port.
 
-11.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
+12.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
 
-12.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
+13.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
 
-13.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
+14.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
 
-14.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
+15.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
 
-15.	Select the Tools menu and then Partition Manager.
+16.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
 
-16.	Click OK.
+17.	Select the Tools menu and then Partition Manager.
+
+18.	Click OK.
 
 17.	If all is well, you will see a list of partitions. Find "recovery" in the list and right click it then select "Manage Partition Data"
 
-18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
+20.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 
-19.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
+21.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
 
-20.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
+22.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
 > [!NOTE]
 > If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
 
@@ -200,7 +203,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 28. After Lenovo splash screen, LineageOS boot animation will play for a few minutes while the OS sets up. I timed a brand new device and it took 1min 20ses.
 
-29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem.
+29. LineageOS may display the error **Speech Services by Google has stopped**. This is common and doesn't seem to be a problem. Tap to dismiss it.
 
 30. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
@@ -327,8 +330,10 @@ These setting are what I use on my devices. Feel free to modify as desired.
 1.	On first boot, run through the setup process, select your Wi-Fi and set up as a new device.
 2.	If you installed the OpenGapps, you will have a chance to sign in to Google.
 3.	Protect your phone - I set Not Now, skip anyway.
-4.	In Google Services, I deselect everything.
-5.	Go to settings and set:
+4.	In Google Services, I deselect everything. Tap Next.
+5.	Then decide to check of uncheck the options on the LineageOS Features page, and tap Next.
+6.	Tap Start and it will take you to the home screen.
+7.	Go to settings and set:
 
     Display:
 
@@ -356,17 +361,17 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Languages & input - check keyboard is set for your region
         Date & time - set automatic and time zone if not already set
         Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
-        About Phone - Tap Build Number until it shows you are a developer
         Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
-  	    (disable anything else to your liking)
-        Buttons - Volume buttons wake device - ON  
+  	    (disable any other system icons to your liking)
+        Buttons - Volume buttons wake device - ON
+  	     About Phone - Tap Build Number until it shows you are a developer
         Developer options:
            Root access - ADB only
            Android debugging - ON
-6.	Install apps from the google app store (as desired).
-7.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
-8.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
-9.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
+9.	Install apps from the google app store (as desired).
+10.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+11.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
+12.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
 
     
 ## Installing a newer WebView ##
