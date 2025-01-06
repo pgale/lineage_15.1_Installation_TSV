@@ -76,7 +76,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
 > [!NOTE]
 > If you have troubles getting the USB driver working @jaburges has provided some documentation here - [Windows unsigned driver solution](Windows_unsigned_driver_solution.md)
 
-12.	Install QPST 
+11.	Install QPST 
 
       a.	Open the QPST 2.7.496 folder
       
@@ -93,6 +93,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       g.	Click Next two more times. Then click Install
       
       h.	Click Finish when done.
+   	
 13.	Install ABD & Fastboot ++ 
 
       a.	Double click the file ADB-and-Fastboot++_v1.0.8.exe
@@ -108,6 +109,7 @@ You will need a Windows PC or Linux build to run EDL/QFIL and ADB commands. Due 
       f.	Click Install.
       
       g.	Uncheck Open the Toolkit and Launch ADB & Fastboot++ options, click Finish.
+   	
 14.	After installation, Windows should also be in Test Mode which can be seen in the lower left of the desktop.
 
 
@@ -129,34 +131,34 @@ To start from a known state, flash the '200628.084 Teams & Others' firmware/OS t
 
 7.	Make sure the device is switched off at the plug. Plug the USB-C cable into the computer and the device. The USB-C port is under a rubber plug/foot on the bottom of the screen when in landscape orientation. Pull that out, it's just held in place with a little rubber adhesive. (Turning the power off/on at the plug can be easier than pulling out the power connector from the device which is fairly stiff, especially when holding the volume buttons down as in the next steps.)
 
-9.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
+8.	Hold down both volume buttons and then switch on the power to the device. You may hear windows make a sound to indicate it is connected (if system sounds are on). Let go of volume buttons when you hear the sound or after 5 seconds. The device is now in EDL mode (Emergency Download Mode). The screen will be black.
 
 > [!NOTE]
 > Leaving the device on EDL for too long might cause the following error "main:320 Uploading Image using Sahara protocol failed". Be sure to redo step 7 and 9 if you are switching cables.
 
-11.	In QFIL, click on Select Port.
+9.	In QFIL, click on Select Port.
 
-12.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
+10.	Select the Qualcomm device and click OK. (COM port number will be different depending on what port you have connected the device to.)
 
-13.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
+11.	Click the Download button and wait while the flasher downloads to the device. It will show 'Download Succeed' when completed successfully. A working flash will show updates in the 'Status' panel and the status blue bar will progress.
 
-14.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
+12.	If the status pauses for around a minute and then you get an error, referencing Sahara, you will need to find an alternative USB 2.0 port as mentioned above or try a different USB cable.
 
-15.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
+13.	In QFIL, Make sure the programmer and rawprogram and patch are still selected (they should be).
 
-16.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
+14.	Switch OFF your device, wait 10 seconds and then while holding the vol+ and vol- buttons, switch it back on. QFIL will show it has lost the USB connection to the device and then reappear again.
 
-17.	Select the Tools menu and then Partition Manager.
+15.	Select the Tools menu and then Partition Manager.
 
-18.	Click OK.
+16.	Click OK.
 
 17.	If all is well, you will see a list of partitions. Find "recovery" in the list and right click it then select "Manage Partition Data"
 
-20.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
+18.	Select Load image and navigate to your downloaded lineage recovery lineage-15.1-20240531-UNOFFICIAL-starfire-recovery.img
 
-21.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
+19.	The flash should finish within 3-5 seconds. Once done click close and then close again but wait before hitting the final ok.
 
-22.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
+20.	Hold Vol+ (One near mic mute switch) while you press the ok button to automatically boot into recovery. If you miss this, simply power cycle the device while holding Vol+ and it will boot into Lineage Recovery.
 > [!NOTE]
 > If you are on a stock rom it will overwrite your recovery if you boot up without holding vol+ so you will need to reflash the recovery partition again. 
 
@@ -221,6 +223,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 2. In your home dir, create a folder named ThinkSmartView
 
     `mkdir ThinkSmartView`
+   
 3. Download the [200628.084 Teams & Others](https://xdaforums.com/t/cd-18781y-lenovo-thinksmart-view-bootloader-firmware-zoom-teams-conversion-normal-android.4426029/) firmware provided on the XDA Forum thread (At the bottom of the first post under Downloads)
 
     `wget https://s3.wasabisys.com/filestash-buk/lenovo-thinksmart-view/CD-18781Y.200628.084.zip`
@@ -320,7 +323,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 > [!NOTE]
 > @ripcityhandyman reported the following on his three devices: After connecting to WiFi on the initial boot of Lineage, "Checking for updates" appears. On all three of my copies, the setup process hangs on this step indefinitely. The trick I found was to touch the "back" button after a few seconds. You'll actually see another "Checking for updates" page slide across from the left edge, on top of the existing "Checking for updates" page. It's at this point where touching "back" will allow the setup process to continue. If touching "back" returns you to the network list, then you didn't wait long enough.
 
-22. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
+21. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
 
 ## Setting up Android for HA use ##
@@ -338,7 +341,7 @@ These setting are what I use on my devices. Feel free to modify as desired.
     Display:
 
         Brightness level - 100%
-      	Adaptive brightness - OFF
+       	Adaptive brightness - OFF
         LiveDisplay - Display Mode - OFF 
         Style - Style – Dark
 
@@ -362,16 +365,17 @@ These setting are what I use on my devices. Feel free to modify as desired.
         Date & time - set automatic and time zone if not already set
         Hardware Switch Settings - disable both Camera Block Switch settings (your preference)
         Status Bar - System icons - Battery - Don't show this icon (There's no battery so don't show this)
-  	    (disable any other system icons to your liking)
+  	     (disable any other system icons to your liking)
         Buttons - Volume buttons wake device - ON
   	     About Phone - Tap Build Number until it shows you are a developer
         Developer options:
            Root access - ADB only
            Android debugging - ON
-9.	Install apps from the google app store (as desired).
-10.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
-11.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
-12.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
+  	
+8.	Install apps from the google app store (as desired).
+9.	Arrange your icons as you like. By default, there are apps installed on the second page. I just drag everything across to the first page. Long tap and drag anything to 'remove' that you don't want on the desktop. As this won't be visible with Fully Kiosk running, it doesn't matter much but makes it a little quicker to navigate.
+10.	Install a newer WebView if needed (with the benefit of potential performance gains) [Instructions below](#installing-a-newer-webview)
+11.	Optional - turn off the annoying keyboard autocorrect (if you are typing in an email address and it autocorrects to some random words!) Settings - system - Languages & input - virtual keyboard - Android keyboard - Text correction - auto-correction - OFF
 
     
 ## Installing a newer WebView ##
@@ -381,6 +385,7 @@ At the time of writing, Lineage 15.1 ships with Android System WebView 100.0.489
 If you want to install a particular version from apkmirror, follow these instructions. You can also search for WebView in the Google Play Store (as reported by other users) although it never showed up for me, or search for it in a web browser and install the .apk that way. Apparently you can also install Google Chrome which may install a newer WebView but I've not tried this as I don't need Chrome on my devices.
 
 ### Method 1 - Easy ###
+
 1. On the device itself, download the Android System WebView. I tried [125.0.6422.165](https://www.apkmirror.com/apk/google-inc/android-system-webview/android-system-webview-125-0-6422-165-release/android-system-webview-125-0-6422-165-2-android-apk-download). Other versions can be found on that site but make sure it supports Android 8.1.
 
 2. Open the files app.
