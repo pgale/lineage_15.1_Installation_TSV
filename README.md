@@ -265,7 +265,7 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 2. Start EDL
 
-    `~/edl/edl qfil ~/ThinkSmartView/image/rawprogram_unsparse.xml ~/ThinkSmartView/image/patch0.xml ~/ThinkSmartView/image --loader=~/ThinkSmartView/image/prog_emmc_firehose_8953_ddr.mbn`
+    `~/edl/edl qfil ~/ThinkSmartView/image/rawprogram_unsparse.xml ~/ThinkSmartView/image/patch0.xml ~/ThinkSmartView/image --loader=$HOME/ThinkSmartView/image/prog_emmc_firehose_8953_ddr.mbn`
 
 3. Boot the device into EDL by holding both vol keys and plugging in power.
 
