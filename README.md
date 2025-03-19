@@ -325,6 +325,10 @@ adb sideload open_gapps-arm-8.1-pico-20220215.zip
 
 21. Proceed to [Setting up Android for HA use](#setting-up-android-for-ha-use)
 
+## Flashing from within a VirtualBox VM ##
+
+Thanks to lehnerpat for writing instructions on an alternative way to flash from within a VirtualBox Virtual Machine:
+https://github.com/pgale/lineage_15.1_Installation_TSV/discussions/43
 
 ## Setting up Android for HA use ##
  
